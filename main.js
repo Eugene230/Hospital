@@ -80,7 +80,7 @@ Staff.prototype.getSertification = function () {
 }
 
 // ФК Doctor наследуеться от Staff
-function Doctor(name, age, gender, phoneNumber, education, sertification, speciality, patients) {
+function Doctor(name, age, gender, phoneNumber, education, sertification, speciality) {
     Staff.call(this, name, age, gender, phoneNumber, education, sertification);
     this._speciality = speciality;
     this._patients = [];
@@ -111,7 +111,7 @@ Doctor.prototype.removePatient = function (patient) {
 }
 
 // ФК Hospital 
-function Hospital(name, address, phone, departments) {
+function Hospital(name, address, phone) {
     this._name = name;
     this._address = address;
     this._phone = phone;
@@ -152,7 +152,7 @@ Hospital.prototype.removeDepartment = function (department) {
 }
 
 // ФК Department 
-function Department(name, staffs) {
+function Department(name) {
     this._name = name;
     this._staffs = [];
 }
