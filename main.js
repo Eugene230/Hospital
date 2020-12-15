@@ -32,9 +32,9 @@ Person.prototype.getPhoneNumber = function () {
 }
 
 // ФК Patient наследуеться от Person
-function Patient(name, age, gender, phoneNumber, acceptedDate, sickness) {
+function Patient(name, age, gender, phoneNumber, allergic, sickness) {
     Person.call(this, name, age, gender, phoneNumber);
-    this._acceptedDate = acceptedDate;
+    this._allergic = allergic;
     this._sickness = sickness;
 }
 
@@ -42,11 +42,11 @@ Patient.prototype = Object.create(Person.prototype);
 Patient.prototype.constructor = Patient;
 
 // Методы Patient
-Patient.prototype.setAcceptedDate = function (newAcceptedDate) {
-    this._acceptedDate = newAcceptedDate;
+Patient.prototype.setAllergic = function (newAllergic) {
+    this._allergic = newAllergic;
 }
-Patient.prototype.getAcceptedDate = function () {
-    return this._acceptedDate;
+Patient.prototype.getAllergic = function () {
+    return this._allergic;
 }
 Patient.prototype.setSickness = function (newSickness) {
     this._sickness = newSickness;
@@ -177,14 +177,16 @@ Department.prototype.removeStaff = function (staff) {
     })
 }
 
+
+
 // let hospital1 = new Hospital("Main Kharkiv Hospital", "Pushkin street", "+38076757473")
 
-// let department1 = new Department("Хирургия");
-// let department2 = new Department("Терапия");
+// let department1 = new Department("Surgery");
+// let department2 = new Department("Therapy");
 
-// let patient1 = new Patient("Tom", 17, "Man", "+3806456456", "date", "flu");
-// let patient2 = new Patient("Ted", 24, "Man", "+3803463634", "date", "angina");
-// let patient3 = new Patient("Bob", 63, "Man", "+38023555553", "date", "angina");
+// let patient1 = new Patient("Tom", 17, "Man", "+3806456456", true,  "flu");
+// let patient2 = new Patient("Ted", 24, "Man", "+3803463634", false, "angina");
+// let patient3 = new Patient("Bob", 63, "Man", "+38023555553", false, "angina");
 
 // let doctor1 = new Doctor("Jack", 40, "Man", "+38111111", "Harvard Medical School", "International", "Surgeon");
 // let doctor2 = new Doctor("Kate", 25, "Female", "+380222222", "Oxford University Medical School", "International", "Therapist");
@@ -206,8 +208,3 @@ Department.prototype.removeStaff = function (staff) {
 // hospital1.addDepartment(department2);
 
 // console.log("Hospital --->", hospital1);
-
-
-
-
-
